@@ -76,7 +76,7 @@ namespace ServerForm
         static void AddAppsToList()
         {
             apps.Items.AddRange(messages.ToArray());
-            for (int i = 0; i < messages.Count(); i++)
+            for (int i = 0; i < messages.Count() - 1; i++)
             {
                 icons.Add(new Button());
                 icons[i].Name = messages[i];
@@ -100,7 +100,7 @@ namespace ServerForm
         static void AddIcon()
         {
             Icon ic;
-            for (int i = 0; i < icons.Count() - 1; i++)
+            for (int i = 0; i < icons.Count(); i++)
             {
                 ic = Icon.ExtractAssociatedIcon(icons[i].Name);
                 icons[i].BackgroundImage = ic.ToBitmap();

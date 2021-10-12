@@ -23,7 +23,11 @@ namespace Client
                Console.WriteLine(clientData.GetMsg());
 
                SearchApp();
-               StartApp();
+                while(true)
+                {
+                    StartApp();
+                }
+               
             }
             catch (Exception ex)
             {
@@ -39,7 +43,10 @@ namespace Client
         static void StartApp()
         {
             string path = clientData.GetMsg();
-            Process.Start(new ProcessStartInfo(path));
+            Process.Start(new ProcessStartInfo(path)
+            {
+                UseShellExecute = true
+            });
         }
     }
 }
